@@ -12,7 +12,7 @@ def main():
 def insomnia(n):
     return n == 0
 
-def default(nr):
+def get_number(nr):
     seen_nr = [False] * 10
     index = 1
     while True:
@@ -21,9 +21,7 @@ def default(nr):
         for elem in res:
             if not seen_nr[elem]:
                 seen_nr[elem] = True
-        if False in seen_nr:
-            pass
-        else:
+        if False not in seen_nr: 
             break
         index+=1
     return mult
@@ -32,7 +30,7 @@ def default(nr):
 def last_nr_seen(nr):
     if insomnia(nr):
         return "INSOMNIA"
-    return default(nr)
+    return get_number(nr)
 
 
 
