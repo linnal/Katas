@@ -9,9 +9,9 @@ class TestCeaserChiper(unittest.TestCase):
 
     def test_enqueue(self):
         queue = lq.LinkedQueue()
-    	queue.enqueue(2)
-    	queue.enqueue(3)
-    	self.assertEqual( queue.to_string(), "2 3 " )
+        queue.enqueue(2)
+        queue.enqueue(3)
+        self.assertEqual( queue.to_string(), "2 3 " )
 
     def test_dequeue(self):
     	queue = lq.LinkedQueue()
@@ -20,7 +20,10 @@ class TestCeaserChiper(unittest.TestCase):
     	node = queue.dequeue()
     	self.assertEqual(node.value, 2)
     	self.assertEqual(queue.to_string(), "3 ")
-
+    	node = queue.dequeue()
+    	self.assertEqual(node.value, 3)
+    	self.assertEqual(queue.to_string(), "")
+    	self.assertRaises( Exception, queue.dequeue)
 
 if __name__ == '__main__':
     unittest.main()

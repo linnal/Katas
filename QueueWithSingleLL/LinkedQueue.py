@@ -1,4 +1,4 @@
-from  Node import * 
+from  Node import *
 
 class LinkedQueue():
 
@@ -19,6 +19,8 @@ class LinkedQueue():
 		self.size += 1
 
 	def dequeue(self):
+		if self.size == 0:
+			raise Exception('Empty queue')
 		deq_node = self.head
 		self.head = self.head.next
 		self.size -= 1
@@ -31,4 +33,3 @@ class LinkedQueue():
 			res += "{} ".format(node.value)
 			node = node.next
 		return res
-
