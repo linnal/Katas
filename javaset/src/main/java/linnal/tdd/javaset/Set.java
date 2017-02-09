@@ -1,14 +1,26 @@
 package linnal.tdd.javaset;
 
-public class Set<T>  {
-    int size = 0;
+import java.util.ArrayList;
+
+public class Set<T> {
+
+    ArrayList<T> items = new ArrayList<>();
 
     public void add(T item) {
-        size += 1;
+        if(contains(item))
+            return;
+        items.add(item);
     }
 
     public int size() {
-        return size;
+        return items.size();
     }
 
+    public boolean contains(T item) {
+        return items.contains(item);
+    }
+
+    public void remove(T item) {
+        items.remove(item);
+    }
 }
