@@ -17,4 +17,4 @@ For example, how much does this basket of books cost?
   - 1 copy of the fifth book
 `
 
-(answer: 51.20 EUR)
+(answer: 51.6 EUR)
